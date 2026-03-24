@@ -14,6 +14,7 @@
   let _saveTimeout = null;
   let _isSyncing = false;
   let _initialized = false;
+  let _initialLoadDone = false;
 
   const SAVE_DELAY = 1500;           // ms debounce before writing
   const STATE_DOC = 'state/main';    // Firestore document path
@@ -141,9 +142,12 @@
         console.log('[TouchPath] No cloud data found — starting fresh.');
       }
 
+      _initialLoadDone = true;
+      clearTimeout(_saveTimeout);
       _isSyncing = false;
     }).catch(err => {
       console.error('[TouchPath] Firestore load error:', err);
+      _initialLoadDone = true;
       _isSyncing = false;
       _showToast('⚠ Laden mislukt — werk offline door', true);
     });
@@ -151,7 +155,7 @@
 
   // ── Save data to Firestore (debounced) ──
   function saveToFirestore() {
-    if (!_initialized || !currentUser || !db || _isSyncing) return;
+    if (!_initialized || !_initialLoadDone || !currentUser || !db || _isSyncing) return;
 
     clearTimeout(_saveTimeout);
     _saveTimeout = setTimeout(() => {
