@@ -1,0 +1,13 @@
+{
+  "name": "touchpath",
+  "version": "1.0.0",
+  "description": "B2B Touchpoint Intelligence — Customer journey visualization across LinkedIn Ads, Google Ads, and LeadInfo",
+  "private": true,
+  "scripts": {
+    "dev": "npx serve public -l 3000",
+    "start": "npx serve public"
+  },
+  "keywords": ["b2b", "touchpoints", "customer-journey", "linkedin-ads", "google-ads", "leadinfo", "intent-scoring"],
+  "author": "",
+  "license": "MIT"
+}
