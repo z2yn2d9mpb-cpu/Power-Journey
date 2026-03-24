@@ -6,10 +6,11 @@
 // ─────────────────────────────────────────────────────
 
 const firebaseConfig = {
-  apiKey:            "REPLACE_ME",
-  authDomain:        "REPLACE_ME.firebaseapp.com",
-  projectId:         "REPLACE_ME",
-  storageBucket:     "REPLACE_ME.appspot.com",
-  messagingSenderId: "000000000000",
-  appId:             "REPLACE_ME"
+  apiKey:            "AIzaSyAx-oWyUci0g9TclrcViOOxur5ejMQcej4",
+  authDomain:        "power-journey-e939a.firebaseapp.com",
+  projectId:         "power-journey-e939a",
+  storageBucket:     "power-journey-e939a.firebasestorage.app",
+  messagingSenderId: "170395685711",
+  appId:             "1:170395685711:web:ee43712f618e210ffb2b3a",
+  measurementId: "G-F149SPMY86"
 };
